@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MobyDick.Entities;
+using MobyDick.Entities.Interactable;
+using MobyDick.Entities.Interactable.Characters;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -18,7 +21,9 @@ namespace MobyDick
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        Character<ICharacter> character;
+        Texture2D test;
+        Vector2 pos = new Vector2(0, 0);
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -34,7 +39,6 @@ namespace MobyDick
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
@@ -46,7 +50,10 @@ namespace MobyDick
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            Texture2D samurai = Content.Load<Texture2D>("samurai_sprite_test");
+            test = Content.Load<Texture2D>("samurai_sprite_test");
+            pos = new Vector2(0, 0);
+            character = new Character<ICharacter>(samurai, new Rectangle(0, 0, 100, 100), 100, new Vector2(0, 0), Color.Wheat);
             // TODO: use this.Content to load your game content here
         }
 
@@ -69,7 +76,7 @@ namespace MobyDick
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
+            //character.Update();
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -82,7 +89,10 @@ namespace MobyDick
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            character.Draw(spriteBatch);
+            //spriteBatch.Begin();
+            //spriteBatch.Draw(test, pos, new Rectangle(0, 0, 100, 100), Color.Wheat);
+            //spriteBatch.End();
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);

@@ -1,6 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>samurai_sprite_test.png</Source>
+      <Name>samurai_sprite_test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\samurai_sprite_test.xnb</Output>
+      <Time>2014-02-06T23:11:46.971516+02:00</Time>
+    </Item>
+    <Item>
+      <Source>japan-rising_00385734.jpg</Source>
+      <Name>japan</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\japan.xnb</Output>
+      <Time>2014-02-06T23:11:06.466377+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{6E084EBB-0F46-4234-A817-26AE77019F32}</ContentProjectGUID>
@@ -8,12 +26,36 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>c:\users\ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDickContent\</RootDirectory>
-      <LoggerRootDirectory>c:\users\ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\</LoggerRootDirectory>
-      <IntermediateDirectory>c:\users\ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>c:\users\ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDickContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T17:22:30+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T17:22:30+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T17:22:30+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T17:22:30+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T17:22:30+03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T17:22:30+03:00</Value>
+      </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
         <Value>2014-02-06T17:49:32.8594338+02:00</Value>
