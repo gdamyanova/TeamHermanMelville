@@ -1,0 +1,6 @@
+c:\users\ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\MobyDick.exe
+c:\users\ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\MobyDick.pdb
+c:\users\ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\obj\x86\Debug\MobyDick.csprojResolveAssemblyReference.cache
+c:\users\ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\obj\x86\Debug\MobyDick.exe
+c:\users\ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\obj\x86\Debug\MobyDick.pdb
