@@ -14,8 +14,8 @@ namespace MobyDick.Entities.Interactable.Characters
     class Player<TPlayer> : Character<TPlayer> where TPlayer : ICharacter
     {
         private List<ItemType> BackPack;
-        public Player(Texture2D texture, Rectangle form, int health, Vector2 position, Color color)
-            : base(texture, form, health, position, color)
+        public Player(Texture2D texture, Rectangle form, int health, int velocity, Vector2 position, Color color, SpriteBatch spriteBatch)
+            : base(texture, form, health, velocity, position, color, spriteBatch)
         {
             this.BackPack = new List<ItemType>(10);
         }

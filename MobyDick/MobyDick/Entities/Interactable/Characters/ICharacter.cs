@@ -10,7 +10,7 @@ using MobyDick.Entities.Interactable.Items;
 
 namespace MobyDick.Entities.Interactable.Characters
 {
-    interface ICharacter : IEntity
+    interface ICharacter : IAnimatedEntity
     {
         int Health { get; set; }
         int Velocity { get; set; }

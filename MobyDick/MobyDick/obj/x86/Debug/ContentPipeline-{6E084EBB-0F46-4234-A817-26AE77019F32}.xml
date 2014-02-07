@@ -11,13 +11,22 @@
       <Time>2014-02-06T23:11:46.971516+02:00</Time>
     </Item>
     <Item>
-      <Source>japan-rising_00385734.jpg</Source>
-      <Name>japan</Name>
+      <Source>character.png</Source>
+      <Name>character</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\japan.xnb</Output>
-      <Time>2014-02-06T23:11:06.466377+02:00</Time>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\character.xnb</Output>
+      <Time>2014-02-07T11:18:46.8864963+02:00</Time>
+    </Item>
+    <Item>
+      <Source>moving_test.png</Source>
+      <Name>moving_test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\moving_test.xnb</Output>
+      <Time>2014-02-07T12:44:14.8307519+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

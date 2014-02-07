@@ -12,8 +12,8 @@ namespace MobyDick.Entities.Interactable.Characters
 {
     class NPC<TNPC> : Character<TNPC> where TNPC : ICharacter
     {
-        public NPC(Texture2D texture, Rectangle form, int health, Vector2 position, Color color)
-            : base(texture, form, health, position,color)
+        public NPC(Texture2D texture, Rectangle form, int health, int velocity, Vector2 position, Color color, SpriteBatch spriteBatch)
+            : base(texture, form, health, velocity, position, color, spriteBatch)
         {
 
         }

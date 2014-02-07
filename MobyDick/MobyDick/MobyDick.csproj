@@ -72,7 +72,9 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\AnimatedEntity.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\IAnimatedEntity.cs" />
     <Compile Include="Entities\Interactable\Characters\Character.cs" />
     <Compile Include="Entities\Interactable\Characters\Enemy.cs" />
     <Compile Include="Entities\IEntity.cs" />

@@ -22,8 +22,6 @@ namespace MobyDick
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Character<ICharacter> character;
-        Texture2D test;
-        Vector2 pos = new Vector2(0, 0);
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -50,10 +48,9 @@ namespace MobyDick
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            Texture2D samurai = Content.Load<Texture2D>("samurai_sprite_test");
-            test = Content.Load<Texture2D>("samurai_sprite_test");
-            pos = new Vector2(0, 0);
-            character = new Player<ICharacter>(samurai, new Rectangle(0, 0, 100, 100), 100, new Vector2(0, 0), Color.Wheat);
+            Texture2D samurai = Content.Load<Texture2D>("moving_test");
+            character = new Player<ICharacter>(samurai, new Rectangle(0, 0, 40, 48), 100, 5, 
+                new Vector2(0, 0), Color.White, spriteBatch);
             // TODO: use this.Content to load your game content here
         }
 
@@ -76,7 +73,7 @@ namespace MobyDick
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-            character.Update();
+            character.Update(gameTime);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -89,7 +86,7 @@ namespace MobyDick
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            character.Draw(spriteBatch);
+            character.Draw();
             //spriteBatch.Begin();
             //spriteBatch.Draw(test, pos, new Rectangle(0, 0, 100, 100), Color.Wheat);
             //spriteBatch.End();

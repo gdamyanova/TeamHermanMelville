@@ -9,27 +9,29 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MobyDick.Entities.Interactable.Characters
 {
-    class Character<TCharacter> : BaseEntity<TCharacter> where TCharacter : ICharacter
+    class Character<TCharacter> : AnimatedEntity<TCharacter> where TCharacter : ICharacter
     {
         private int Health { get; set; }
         int Velocity { get; set; }
 
-        public Character(Texture2D texture, Rectangle form, int health, Vector2 position, Color color)
-            : base(texture, form, position, color)
+        public Character(Texture2D texture, Rectangle form, int health, int velocity, Vector2 position, Color color, SpriteBatch spriteBatch)
+            : base(texture, form, position, color, spriteBatch)
         {
             this.Health = health;
-            this.Velocity = 10;
+            this.Velocity = velocity;
         }
 
-        public override void Update()
+        public void Update(GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
+                this.AnimateRight(gameTime);
                 this.Move(Directions.Right);
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
-                this.Move(Directions.Left);   
+                this.AnimateLeft(gameTime);
+                this.Move(Directions.Left);
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Up))
             {

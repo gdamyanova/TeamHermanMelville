@@ -12,8 +12,8 @@ namespace MobyDick.Entities.Interactable.Characters
 {
     class Enemy<TEnemy> : NPC<TEnemy> where TEnemy : ICharacter
     {
-        public Enemy(Texture2D texture, Rectangle form, int health, Vector2 position, Color color)
-            : base(texture, form, health, position, color)
+        public Enemy(Texture2D texture, Rectangle form, int health, int velocity, Vector2 position, Color color, SpriteBatch spriteBatch)
+            : base(texture, form, health, velocity, position, color, spriteBatch)
         {
 
         }

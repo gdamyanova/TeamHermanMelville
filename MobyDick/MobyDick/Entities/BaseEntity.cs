@@ -9,10 +9,10 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MobyDick.Entities
 {
-    internal class BaseEntity<TEntity> where TEntity : IEntity
+    internal class BaseEntity<TEntity>
     {
-        protected Texture2D Texture { get;  set; }
-        protected Color Color { get;  set; }
+        protected Texture2D Texture { get; set; }
+        protected Color Color { get; set; }
         protected Rectangle Form { get; set; }
         protected SoundEffect Sound { get; set; }
         protected Vector2 Position
@@ -26,7 +26,13 @@ namespace MobyDick.Entities
                 this.position = value;
             }
         }
+
         private Vector2 position;
+
+        public BaseEntity()
+        {
+
+        }
         public BaseEntity(Texture2D texture, Rectangle form, Vector2 position, Color color)
         {
             this.Position = position;
@@ -57,5 +63,6 @@ namespace MobyDick.Entities
         {
             this.Sound.Play(volume, 0.5f, 0.5f);
         }
+
     }
 }
