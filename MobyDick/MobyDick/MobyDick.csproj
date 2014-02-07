@@ -79,8 +79,10 @@
     <Compile Include="Entities\Interactable\Characters\ICharacter.cs" />
     <Compile Include="Entities\Interactable\Characters\NPC.cs" />
     <Compile Include="Entities\Interactable\Characters\Player.cs" />
+    <Compile Include="Entities\Interactable\Directions.cs" />
     <Compile Include="Entities\Interactable\Items\BaseItem.cs" />
     <Compile Include="Entities\Interactable\Items\IItem.cs" />
+    <Compile Include="Entities\Interactable\Items\ItemType.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />

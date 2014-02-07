@@ -15,7 +15,31 @@ namespace MobyDick.Entities
         protected Color Color { get;  set; }
         protected Rectangle Form { get; set; }
         protected SoundEffect Sound { get; set; }
-        protected Vector2 Position { get; set; }
+        protected Vector2 Position
+        {
+            get
+            {
+                return this.position;
+            }
+            set
+            {
+                this.position = value;
+            }
+        }
+        private Vector2 position;
+        public BaseEntity(Texture2D texture, Rectangle form, Vector2 position, Color color)
+        {
+            this.Position = position;
+            this.Color = color;
+            this.Texture = texture;
+            this.Form = form;
+        }
+
+        public BaseEntity(Texture2D texture, Rectangle form, Vector2 position, Color color, SoundEffect sound)
+            : this(texture, form, position, color)
+        {
+            this.Sound = sound;
+        }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
@@ -33,6 +57,5 @@ namespace MobyDick.Entities
         {
             this.Sound.Play(volume, 0.5f, 0.5f);
         }
-
     }
 }

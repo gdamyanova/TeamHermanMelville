@@ -5,8 +5,7 @@ using System.Text;
 
 namespace MobyDick.Entities.Interactable.Items
 {
-    interface IItem : IEntity
+    enum ItemType
     {
-        ItemType Type { get; set; }
     }
 }

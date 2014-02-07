@@ -14,8 +14,5 @@ namespace MobyDick.Entities
         Color Color { get;  set; }
         Rectangle Form { get; set; }
         Vector2 Position { get; set; }
-        //void Update();
-        //void Draw();
-        //void Initialize();
     }
 }

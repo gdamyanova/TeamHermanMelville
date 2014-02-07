@@ -53,7 +53,7 @@ namespace MobyDick
             Texture2D samurai = Content.Load<Texture2D>("samurai_sprite_test");
             test = Content.Load<Texture2D>("samurai_sprite_test");
             pos = new Vector2(0, 0);
-            character = new Character<ICharacter>(samurai, new Rectangle(0, 0, 100, 100), 100, new Vector2(0, 0), Color.Wheat);
+            character = new Player<ICharacter>(samurai, new Rectangle(0, 0, 100, 100), 100, new Vector2(0, 0), Color.Wheat);
             // TODO: use this.Content to load your game content here
         }
 
@@ -76,7 +76,7 @@ namespace MobyDick
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-            //character.Update();
+            character.Update();
             // TODO: Add your update logic here
 
             base.Update(gameTime);

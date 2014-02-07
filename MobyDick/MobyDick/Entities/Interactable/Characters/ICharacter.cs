@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
-
+using MobyDick.Entities.Interactable.Items;
 
 namespace MobyDick.Entities.Interactable.Characters
 {
@@ -14,5 +14,6 @@ namespace MobyDick.Entities.Interactable.Characters
     {
         int Health { get; set; }
         int Velocity { get; set; }
+        List<ItemType> BackPack {get; set;}
     }
 }
