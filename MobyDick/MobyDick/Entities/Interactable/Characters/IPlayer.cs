@@ -7,17 +7,14 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
 using MobyDick.Entities.Interactable.Characters;
+using MobyDick.Entities.Interactable.Items;
 
 namespace MobyDick.Entities.Interactable.Characters
 {
-    internal class Enemy : NPC
+    interface IPlayer
     {
-        public Enemy(Texture2D texture, Rectangle form, int health, int velocity, Vector2 position, Color color, SpriteBatch spriteBatch)
-            : base(texture, form, health, velocity, position, color, spriteBatch)
-        {
-
-        }
-
-        
+        int Level { get; }
+        int Experience { get; }
+        List<ItemType> BackPack { get; }
     }
 }

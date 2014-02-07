@@ -10,17 +10,17 @@ using MobyDick.Entities.Interactable;
 
 namespace MobyDick.Entities
 {
-    class AnimatedEntity<TEntity> : BaseEntity<TEntity> where TEntity : IAnimatedEntity
+    internal abstract class AnimatedEntity : BaseEntity<AnimatedEntity>, IAnimatedEntity
     {
-        protected float Timer { get; set; }
-        protected float Interval { get; set; }
-        protected int CurrentFrameNumber { get; set; }
-        protected int MaxFrames { get; set; }
-        protected SpriteBatch spriteBatch { get; set; }
-        protected SpriteEffects Effect { get; set; }
-        protected Directions currentDirection { get; set; }
-        private int SpriteRows;
-        protected Rectangle CurrentFrame
+        public float Timer { get; set; }
+        public float Interval { get; set; }
+        public int CurrentFrameNumber { get; set; }
+        public int MaxFrames { get; set; }
+        public SpriteBatch spriteBatch { get; set; }
+        public SpriteEffects Effect { get; set; }
+        public Directions currentDirection { get; set; }
+        public int SpriteRows { get; set; }
+        public Rectangle CurrentFrame
         {
             get
             {
@@ -51,7 +51,7 @@ namespace MobyDick.Entities
             this.Interval = interval;
             this.spriteBatch = spriteBatch;
             this.Effect = SpriteEffects.None;
-            this.SpriteRows = 4;
+            this.SpriteRows = spriteRows;
         }
 
         protected void AnimateMovement(GameTime gameTime)

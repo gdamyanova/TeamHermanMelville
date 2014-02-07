@@ -12,10 +12,8 @@ namespace MobyDick.Entities.Interactable.Characters
 {
     interface ICharacter : IAnimatedEntity
     {
-        int Health { get; set; }
-        int Velocity { get; set; }
-        List<ItemType> BackPack {get; set;}
-        int Level { get; set; }
-        int Experience { get; set; }
+        int Health { get; }
+        int Velocity { get;}
+
     }
 }

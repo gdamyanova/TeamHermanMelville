@@ -10,7 +10,7 @@ using MobyDick.Entities.Interactable.Characters;
 
 namespace MobyDick.Entities.Interactable.Characters
 {
-    class NPC<TNPC> : Character<TNPC> where TNPC : ICharacter
+    internal class NPC : Character
     {
         public NPC(Texture2D texture, Rectangle form, int health, int velocity, Vector2 position, Color color, SpriteBatch spriteBatch)
             : base(texture, form, health, velocity, position, color, spriteBatch)

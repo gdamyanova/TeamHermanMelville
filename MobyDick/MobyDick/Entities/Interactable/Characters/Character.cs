@@ -9,12 +9,10 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MobyDick.Entities.Interactable.Characters
 {
-    class Character<TCharacter> : AnimatedEntity<TCharacter> where TCharacter : ICharacter
+    internal abstract class Character : AnimatedEntity, ICharacter
     {
-        protected int Health { get; set; }
-        private int Velocity { get; set; }
-        protected int Level { get; private set; }
-        protected int Experience { get; private set; }
+        public int Health { get; private set; }
+        public int Velocity { get; private set; }
         public Character(Texture2D texture, Rectangle form, int health, int velocity, Vector2 position, Color color, SpriteBatch spriteBatch)
             : base(texture, form, position, color, spriteBatch)
         {
@@ -26,13 +24,11 @@ namespace MobyDick.Entities.Interactable.Characters
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
-                this.Effect = SpriteEffects.None;
                 this.AnimateMovement(gameTime);
                 this.Move(Directions.Right);
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
-                //this.Effect = SpriteEffects.FlipHorizontally;
                 this.AnimateMovement(gameTime);
                 this.Move(Directions.Left);
             }
@@ -78,12 +74,6 @@ namespace MobyDick.Entities.Interactable.Characters
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-        }
-
-        private void LevelUp()
-        {
-            this.Level++;
-            this.Experience = 0;
         }
     }
 }

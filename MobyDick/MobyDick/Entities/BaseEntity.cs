@@ -9,13 +9,14 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MobyDick.Entities
 {
-    internal class BaseEntity<TEntity>
+    internal abstract class BaseEntity<TEntity>
     {
-        protected Texture2D Texture { get; set; }
-        protected Color Color { get; set; }
-        protected Rectangle Form { get; set; }
-        protected SoundEffect Sound { get; set; }
-        protected Vector2 Position
+
+        public Texture2D Texture { get; set; }
+        public Color Color { get; set; }
+        public Rectangle Form { get; set; }
+        public SoundEffect Sound { get; set; }
+        public Vector2 Position
         {
             get
             {

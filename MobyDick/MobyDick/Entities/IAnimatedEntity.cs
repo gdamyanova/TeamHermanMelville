@@ -12,7 +12,7 @@ namespace MobyDick.Entities
     {
         float Timer { get; set; }
         float Interval { get; set; }
-        int CurrentFrame { get; set; }
+        int CurrentFrameNumber { get; set; }
         int MaxFrames { get; set; }
         SpriteBatch spriteBatch { get; set; }
         SpriteEffects Effect { get; set; }

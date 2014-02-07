@@ -1,4 +1,8 @@
-Content\samurai_sprite_test.xnb
-Content\character.xnb
-Content\moving_test.xnb
 Content\batman_sprite.xnb
+Content\Telepath2.xnb
+Content\blue_npc.xnb
+Content\creepy_jane.xnb
+Content\dog_npc.xnb
+Content\good_guy_greg.xnb
+Content\whale_killer.xnb
+Content\zombie_link.xnb

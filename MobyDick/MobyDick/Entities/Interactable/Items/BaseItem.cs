@@ -9,9 +9,9 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MobyDick.Entities.Interactable.Items
 {
-    internal class BaseItem<TItem> : BaseEntity<TItem> where TItem : IItem
+    internal class BaseItem: BaseEntity<BaseItem>, IItem
     {
-        public ItemType Type { get; private set; }
+        public ItemType Type { get; set; }
         public BaseItem (Texture2D texture, Rectangle form, Vector2 position, Color color, ItemType type)
             : base(texture, form, position, color)
         {

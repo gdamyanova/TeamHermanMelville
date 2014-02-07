@@ -4,7 +4,11 @@ c:\users\ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick
 c:\users\ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 c:\users\ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\obj\x86\Debug\MobyDick.exe
 c:\users\ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\obj\x86\Debug\MobyDick.pdb
-C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\samurai_sprite_test.xnb
-C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\character.xnb
-C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\moving_test.xnb
 C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\batman_sprite.xnb
+C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\Telepath2.xnb
+C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\blue_npc.xnb
+C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\creepy_jane.xnb
+C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\dog_npc.xnb
+C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\good_guy_greg.xnb
+C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\whale_killer.xnb
+C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\zombie_link.xnb

@@ -2,33 +2,6 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>samurai_sprite_test.png</Source>
-      <Name>samurai_sprite_test</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\samurai_sprite_test.xnb</Output>
-      <Time>2014-02-06T23:11:46.971516+02:00</Time>
-    </Item>
-    <Item>
-      <Source>character.png</Source>
-      <Name>character</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\character.xnb</Output>
-      <Time>2014-02-07T11:18:46.8864963+02:00</Time>
-    </Item>
-    <Item>
-      <Source>moving_test.png</Source>
-      <Name>moving_test</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\moving_test.xnb</Output>
-      <Time>2014-02-07T12:44:14.8307519+02:00</Time>
-    </Item>
-    <Item>
       <Source>batman_sprite.png</Source>
       <Name>batman_sprite</Name>
       <Importer>TextureImporter</Importer>
@@ -36,6 +9,69 @@
       <Options>None</Options>
       <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\batman_sprite.xnb</Output>
       <Time>2014-02-07T15:22:19.4883843+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Telepath2.jpg</Source>
+      <Name>Telepath2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\Telepath2.xnb</Output>
+      <Time>2014-02-07T16:26:41.7001755+02:00</Time>
+    </Item>
+    <Item>
+      <Source>blue_npc.png</Source>
+      <Name>blue_npc</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\blue_npc.xnb</Output>
+      <Time>2014-02-07T16:41:02.0557225+02:00</Time>
+    </Item>
+    <Item>
+      <Source>creepy_jane.png</Source>
+      <Name>creepy_jane</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\creepy_jane.xnb</Output>
+      <Time>2014-02-07T16:41:02.0645963+02:00</Time>
+    </Item>
+    <Item>
+      <Source>dog_npc.png</Source>
+      <Name>dog_npc</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\dog_npc.xnb</Output>
+      <Time>2014-02-07T16:41:02.0823439+02:00</Time>
+    </Item>
+    <Item>
+      <Source>good_guy_greg.png</Source>
+      <Name>good_guy_greg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\good_guy_greg.xnb</Output>
+      <Time>2014-02-07T16:41:02.0823439+02:00</Time>
+    </Item>
+    <Item>
+      <Source>whale_killer.png</Source>
+      <Name>whale_killer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\whale_killer.xnb</Output>
+      <Time>2014-02-07T16:41:02.0912177+02:00</Time>
+    </Item>
+    <Item>
+      <Source>zombie_link.png</Source>
+      <Name>zombie_link</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\zombie_link.xnb</Output>
+      <Time>2014-02-07T16:41:02.1267129+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
