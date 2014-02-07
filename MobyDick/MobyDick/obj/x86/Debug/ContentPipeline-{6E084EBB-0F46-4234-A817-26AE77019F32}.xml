@@ -28,6 +28,15 @@
       <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\moving_test.xnb</Output>
       <Time>2014-02-07T12:44:14.8307519+02:00</Time>
     </Item>
+    <Item>
+      <Source>batman_sprite.png</Source>
+      <Name>batman_sprite</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\batman_sprite.xnb</Output>
+      <Time>2014-02-07T15:22:19.4883843+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{6E084EBB-0F46-4234-A817-26AE77019F32}</ContentProjectGUID>

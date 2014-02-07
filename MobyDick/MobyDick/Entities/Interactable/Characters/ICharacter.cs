@@ -15,5 +15,7 @@ namespace MobyDick.Entities.Interactable.Characters
         int Health { get; set; }
         int Velocity { get; set; }
         List<ItemType> BackPack {get; set;}
+        int Level { get; set; }
+        int Experience { get; set; }
     }
 }

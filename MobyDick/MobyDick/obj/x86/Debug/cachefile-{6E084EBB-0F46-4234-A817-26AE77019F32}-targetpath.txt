@@ -1,3 +1,4 @@
 Content\samurai_sprite_test.xnb
 Content\character.xnb
 Content\moving_test.xnb
+Content\batman_sprite.xnb

@@ -5,11 +5,10 @@ using System.Text;
 
 namespace MobyDick.Entities.Interactable
 {
-    enum Directions
+    enum State
     {
-        Down = 0, 
-        Left,
-        Right,
-        Up
+        Walking,
+        Running,
+        Standing
     }
 }

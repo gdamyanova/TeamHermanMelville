@@ -15,5 +15,8 @@ namespace MobyDick.Entities
         int CurrentFrame { get; set; }
         int MaxFrames { get; set; }
         SpriteBatch spriteBatch { get; set; }
+        SpriteEffects Effect { get; set; }
+        int SpriteRows { get; set; }
+
     }
 }

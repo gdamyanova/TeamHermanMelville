@@ -48,9 +48,12 @@ namespace MobyDick
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            Texture2D samurai = Content.Load<Texture2D>("moving_test");
-            character = new Player<ICharacter>(samurai, new Rectangle(0, 0, 40, 48), 100, 5, 
+            Texture2D batman = Content.Load<Texture2D>("batman_sprite");
+            //character = new Player<ICharacter>(samurai, new Rectangle(0, 0, 40, 48), 100, 5, 
+            //    new Vector2(0, 0), Color.White, spriteBatch);
+            character = new Player<ICharacter>(batman, new Rectangle(0, 0, 30, 33), 100, 5,
                 new Vector2(0, 0), Color.White, spriteBatch);
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -91,7 +94,6 @@ namespace MobyDick
             //spriteBatch.Draw(test, pos, new Rectangle(0, 0, 100, 100), Color.Wheat);
             //spriteBatch.End();
             // TODO: Add your drawing code here
-
             base.Draw(gameTime);
         }
     }
