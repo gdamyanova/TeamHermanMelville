@@ -56,11 +56,11 @@ namespace MobyDick
             Texture2D dogNpc = Content.Load<Texture2D>("dog_npc");
             Texture2D blueNpc = Content.Load<Texture2D>("blue_npc");
             Texture2D creepyJane = Content.Load<Texture2D>("creepy_jane");
+            Texture2D sceneTexture = Content.Load<Texture2D>("Telepath2");
 
             character = new Player(batman, new Rectangle(0, 0, 30, 33), 100, 5,
                 new Vector2(0, 0), Color.White, spriteBatch);
 
-            Texture2D sceneTexture = Content.Load<Texture2D>("Telepath2");
             scene = new Scene(sceneTexture, new Rectangle(0, 0, 714, 512), new Vector2(0, 0), Color.Wheat, "scene 1");
 
             var wk = new NPC(whaleKiller, new Rectangle(0, 0, 40, 50), 100, 5,
@@ -69,9 +69,11 @@ namespace MobyDick
                 new Vector2(60, 0), Color.White, spriteBatch);
             var dog = new NPC(dogNpc, new Rectangle(0, 0, 30, 36), 100, 5,
                 new Vector2(60, 0), Color.White, spriteBatch);
+
             scene.AddNPC(wk);
             scene.AddNPC(zl);
             scene.AddNPC(dog);
+            scene.AddPlayer(character);
             // TODO: use this.Content to load your game content here
         }
 
@@ -94,7 +96,8 @@ namespace MobyDick
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-            character.Update(gameTime);
+            //character.Update(gameTime);
+            scene.Update(gameTime);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -108,7 +111,7 @@ namespace MobyDick
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             scene.Draw(spriteBatch);
-            character.Draw();
+            //character.Draw();
 
             // TODO: Add your drawing code here
             base.Draw(gameTime);
