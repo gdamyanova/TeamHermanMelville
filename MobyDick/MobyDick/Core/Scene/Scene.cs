@@ -15,8 +15,7 @@ namespace MobyDick.Entities
         private Dictionary<string, Scene> LinkedScenes;
         private List<BaseItem> Obsticles;
         private List<NPC> NPCS;
-        private Player player;
-        public string SceneName {get; private set;}
+        public string SceneName { get; private set; }
         public Scene(Texture2D texture, Rectangle form, Vector2 position, Color color, string sceneName)
             : base(texture, form, position, color)
         {
@@ -26,7 +25,7 @@ namespace MobyDick.Entities
             this.LinkedScenes = new Dictionary<string, Scene>();
         }
 
-        public void LinkScene(string sceneName ,Scene scene)
+        public void LinkScene(string sceneName, Scene scene)
         {
             this.LinkedScenes.Add(sceneName, scene);
         }
@@ -53,11 +52,6 @@ namespace MobyDick.Entities
             this.NPCS.Add(npc);
         }
 
-        public void AddPlayer(Player player)
-        {
-            this.player = player;
-        }
-
         public void Update(GameTime gameTime)
         {
             base.Update();
@@ -69,7 +63,6 @@ namespace MobyDick.Entities
             {
                 npc.Update();
             }
-            player.Update(gameTime);
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
@@ -82,7 +75,6 @@ namespace MobyDick.Entities
             {
                 npc.Draw();
             }
-            player.Draw();
         }
     }
 }

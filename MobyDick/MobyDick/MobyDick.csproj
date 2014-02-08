@@ -72,26 +72,26 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\AnimatedEntity.cs" />
-    <Compile Include="Entities\BaseEntity.cs" />
-    <Compile Include="Entities\IAnimatedEntity.cs" />
-    <Compile Include="Entities\Interactable\Characters\Character.cs" />
-    <Compile Include="Entities\Interactable\Characters\Enemy.cs" />
-    <Compile Include="Entities\IEntity.cs" />
-    <Compile Include="Entities\Interactable\Characters\ICharacter.cs" />
-    <Compile Include="Entities\Interactable\Characters\IPlayer.cs" />
-    <Compile Include="Entities\Interactable\Characters\NPC.cs" />
-    <Compile Include="Entities\Interactable\Characters\Player.cs" />
-    <Compile Include="Entities\Interactable\Directions.cs" />
-    <Compile Include="Entities\Interactable\Items\BaseItem.cs" />
-    <Compile Include="Entities\Interactable\Items\IItem.cs" />
-    <Compile Include="Entities\Interactable\Items\ItemType.cs" />
-    <Compile Include="Entities\Interactable\State.cs" />
-    <Compile Include="Entities\Scene\Scene.cs" />
-    <Compile Include="Point.cs" />
+    <Compile Include="Core\Entities\AnimatedEntity.cs" />
+    <Compile Include="Core\Entities\BaseEntity.cs" />
+    <Compile Include="Core\Entities\IAnimatedEntity.cs" />
+    <Compile Include="Core\Entities\Interactable\Characters\Character.cs" />
+    <Compile Include="Core\Entities\Interactable\Characters\Enemy.cs" />
+    <Compile Include="Core\Entities\IEntity.cs" />
+    <Compile Include="Core\Entities\Interactable\Characters\ICharacter.cs" />
+    <Compile Include="Core\Entities\Interactable\Characters\IPlayer.cs" />
+    <Compile Include="Core\Entities\Interactable\Characters\NPC.cs" />
+    <Compile Include="Core\Entities\Interactable\Characters\Player.cs" />
+    <Compile Include="Core\Entities\Interactable\Directions.cs" />
+    <Compile Include="Core\Entities\Interactable\Items\BaseItem.cs" />
+    <Compile Include="Core\Entities\Interactable\Items\IItem.cs" />
+    <Compile Include="Core\Entities\Interactable\Items\ItemType.cs" />
+    <Compile Include="Core\Entities\Interactable\State.cs" />
+    <Compile Include="Core\Scene\Scene.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Core\World.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

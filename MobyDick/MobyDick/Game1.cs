@@ -23,6 +23,7 @@ namespace MobyDick
         SpriteBatch spriteBatch;
         Player character;
         Scene scene;
+        World world;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -49,7 +50,6 @@ namespace MobyDick
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            Texture2D batman = Content.Load<Texture2D>("batman_sprite");
             Texture2D whaleKiller = Content.Load<Texture2D>("whale_killer");
             Texture2D zombieLink = Content.Load<Texture2D>("zombie_link");
             Texture2D ggg = Content.Load<Texture2D>("good_guy_greg");
@@ -58,8 +58,9 @@ namespace MobyDick
             Texture2D creepyJane = Content.Load<Texture2D>("creepy_jane");
             Texture2D sceneTexture = Content.Load<Texture2D>("Telepath2");
 
-            character = new Player(batman, new Rectangle(0, 0, 30, 33), 100, 5,
-                new Vector2(0, 0), Color.White, spriteBatch);
+            world = World.MakeWorld(Content, spriteBatch);
+            world.AddTexture("batman", "batman_sprite");
+            world.CreatePlayer("batman", new Rectangle(0, 0, 30, 33), new Vector2(0, 0), Color.White);
 
             scene = new Scene(sceneTexture, new Rectangle(0, 0, 714, 512), new Vector2(0, 0), Color.Wheat, "scene 1");
 
@@ -73,7 +74,7 @@ namespace MobyDick
             scene.AddNPC(wk);
             scene.AddNPC(zl);
             scene.AddNPC(dog);
-            scene.AddPlayer(character);
+            world.AddScene(scene);
             // TODO: use this.Content to load your game content here
         }
 
@@ -97,7 +98,7 @@ namespace MobyDick
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
             //character.Update(gameTime);
-            scene.Update(gameTime);
+            world.Update(gameTime);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -110,7 +111,7 @@ namespace MobyDick
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            scene.Draw(spriteBatch);
+            world.Draw();
             //character.Draw();
 
             // TODO: Add your drawing code here
