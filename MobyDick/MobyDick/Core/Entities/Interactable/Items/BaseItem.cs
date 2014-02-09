@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Input;
-
-namespace MobyDick.Entities.Interactable.Items
+﻿namespace MobyDick.Entities.Interactable.Items
 {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
     internal class BaseItem: BaseEntity<BaseItem>, IItem
     {
         public ItemType Type { get; set; }

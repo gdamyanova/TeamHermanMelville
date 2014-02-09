@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using MobyDick.Entities;
-using MobyDick.Entities.Interactable;
-using MobyDick.Entities.Interactable.Characters;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-
-namespace MobyDick
+﻿namespace MobyDick
 {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Content;
+    using Microsoft.Xna.Framework.Graphics;
+    using MobyDick.Entities;
+    using MobyDick.Entities.Interactable.Characters;
+    using System.Collections.Generic;
     class World
     {
+        #region Events
+        delegate void EventHandler(object item);
+        event EventHandler Collision;
+        #endregion
+        #region Properties
         private Dictionary<string, Scene> Scenes;
         private Scene CurrentScene { get; set; }
         private Player PlayerEntity;
@@ -24,6 +21,8 @@ namespace MobyDick
         private static World instance;
 
         private Dictionary<string, Texture2D> Textures;
+        #endregion
+        #region Constructors
         private World(ContentManager content, SpriteBatch spriteBatch)
         {
             this.Scenes = new Dictionary<string, Scene>();
@@ -39,7 +38,8 @@ namespace MobyDick
             }
             return instance;
         }
-
+        #endregion
+        #region Methods
         public void AddScene(Scene scene)
         {
             this.Scenes.Add(scene.SceneName, scene);
@@ -70,9 +70,41 @@ namespace MobyDick
             }
         }
 
+        private bool DetectCollisions()
+        {
+            foreach (var item in this.CurrentScene.Obsticles)
+            {
+                if (this.PlayerEntity.BoundingBox.Intersects(item.BoundingBox))
+                {
+                    if (this.Collision != null)
+                    {
+                        this.Collision.Invoke(item);
+                    }
+                    return true;
+                }
+            }
+            foreach (var item in this.CurrentScene.NPCS)
+            {
+                if (this.PlayerEntity.BoundingBox.Intersects(item.BoundingBox))
+                {
+                    if (this.Collision != null)
+                    {
+                        this.Collision.Invoke(item);
+                    }
+                    return true;
+                }
+            }
+            if (this.Collision != null)
+            {
+                this.Collision.Invoke(null);
+            }
+            return true;
+        }
+
         public void CreatePlayer(string playerTexture, Rectangle form, Vector2 position, Color color)
         {
-            this.PlayerEntity = new Player(this.Textures[playerTexture], form, 100, 10, position, color, this.spriteBatch);
+            this.PlayerEntity = new Player(this.Textures[playerTexture], form, 100, 5, position, color, this.spriteBatch);
+            this.Collision += this.PlayerEntity.HandleCollision;
         }
 
         public void AddTexture(string textureName, string assetName)
@@ -88,8 +120,13 @@ namespace MobyDick
 
         public void Update(GameTime gameTime)
         {
-            this.CurrentScene.Update(gameTime);
-            this.PlayerEntity.Update(gameTime);
+            if (this.DetectCollisions())
+            {
+                this.CurrentScene.Update(gameTime);
+                this.PlayerEntity.Update(gameTime);
+            }
+
         }
+        #endregion
     }
 }

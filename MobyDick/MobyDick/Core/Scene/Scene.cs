@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Input;
-using MobyDick.Entities.Interactable.Items;
-using MobyDick.Entities.Interactable.Characters;
-namespace MobyDick.Entities
+﻿namespace MobyDick.Entities
 {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using MobyDick.Entities.Interactable.Characters;
+    using MobyDick.Entities.Interactable.Items;
+    using System.Collections.Generic;
     class Scene : BaseEntity<Scene>, IEntity
     {
         private Dictionary<string, Scene> LinkedScenes;
-        private List<BaseItem> Obsticles;
-        private List<NPC> NPCS;
+        public List<BaseItem> Obsticles;
+        public List<NPC> NPCS;
         public string SceneName { get; private set; }
         public Scene(Texture2D texture, Rectangle form, Vector2 position, Color color, string sceneName)
             : base(texture, form, position, color)

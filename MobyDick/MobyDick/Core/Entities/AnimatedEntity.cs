@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Input;
-using MobyDick.Entities.Interactable;
-
-namespace MobyDick.Entities
+﻿namespace MobyDick.Entities
 {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using MobyDick.Entities.Interactable;
     internal abstract class AnimatedEntity : BaseEntity<AnimatedEntity>, IAnimatedEntity
     {
         public float Timer { get; set; }
@@ -64,6 +57,7 @@ namespace MobyDick.Entities
                 this.CurrentFrameNumber = this.CurrentFrameNumber % this.MaxFrames;
                 this.Timer = 0f;
             }
+            this.Update();
         }
 
         public override void Update()

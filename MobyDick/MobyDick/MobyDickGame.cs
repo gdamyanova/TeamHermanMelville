@@ -1,30 +1,21 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using MobyDick.Entities;
-using MobyDick.Entities.Interactable;
-using MobyDick.Entities.Interactable.Characters;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-
 namespace MobyDick
 {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+    using MobyDick.Entities;
+    using MobyDick.Entities.Interactable.Characters;
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class MobyDickGame : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Player character;
         Scene scene;
         World world;
-        public Game1()
+        public MobyDickGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -72,8 +63,8 @@ namespace MobyDick
                 new Vector2(60, 0), Color.White, spriteBatch);
 
             scene.AddNPC(wk);
-            scene.AddNPC(zl);
-            scene.AddNPC(dog);
+            //scene.AddNPC(zl);
+            //scene.AddNPC(dog);
             world.AddScene(scene);
             // TODO: use this.Content to load your game content here
         }

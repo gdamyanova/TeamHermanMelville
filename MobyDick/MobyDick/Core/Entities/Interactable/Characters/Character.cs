@@ -1,27 +1,67 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Input;
-
-namespace MobyDick.Entities.Interactable.Characters
+﻿namespace MobyDick.Entities.Interactable.Characters
 {
-    internal abstract class Character : AnimatedEntity, ICharacter
-    {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+    using MobyDick.Core.Entities.Interactable;
+    using MobyDick.Entities.Interactable.Items;
+    using System.Collections.Generic;
+
+    internal abstract class Character : AnimatedEntity, ICharacter, IInteractable
+    {   
+        public void HandleCollision(object entity)
+        {
+            if (entity is Character)
+            {
+                this.HandleCharacterInteraction(entity as Character);
+            }
+            else if (entity is BaseItem)
+            {
+
+            }
+            else if (entity == null)
+            {
+
+            }
+        }
+        #region Properties
         public int Health { get; private set; }
         public int Velocity { get; private set; }
+        private Vector2 PreviousPosition { get; set; }
+        #endregion
+
+        #region Constructors
         public Character(Texture2D texture, Rectangle form, int health, int velocity, Vector2 position, Color color, SpriteBatch spriteBatch)
             : base(texture, form, position, color, spriteBatch)
         {
             this.Health = health;
             this.Velocity = velocity;
         }
-
+        #endregion
+        #region Methods
+        private void HandleCharacterInteraction(Character entity)
+        {
+            switch (this.currentDirection)
+            {
+                case Directions.Down:
+                this.Position = new Vector2(this.Position.X, entity.Position.Y - this.Form.Height);
+                    break;
+                case Directions.Left:
+                    this.Position = new Vector2(entity.Position.X + this.Form.Width, this.Position.Y);
+                    break;
+                case Directions.Right:
+                    this.Position = new Vector2(entity.Position.X - this.Form.Width, this.Position.Y);
+                    break;
+                case Directions.Up:
+                this.Position = new Vector2(this.Position.X, entity.Position.Y + this.Form.Height);
+                    break;
+                default:
+                    break;
+            }
+        }
         public void Update(GameTime gameTime)
         {
+            this.PreviousPosition = this.Position;
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
                 this.AnimateMovement(gameTime);
@@ -68,12 +108,14 @@ namespace MobyDick.Entities.Interactable.Characters
                     break;
             }
         }
-        public override void Draw() {
+        public override void Draw()
+        {
             base.Draw();
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
         }
+        #endregion
     }
 }

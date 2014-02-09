@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Input;
-
-namespace MobyDick.Entities
+﻿namespace MobyDick.Entities
 {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Audio;
+    using Microsoft.Xna.Framework.Graphics;
     internal abstract class BaseEntity<TEntity>
     {
 
@@ -16,20 +10,9 @@ namespace MobyDick.Entities
         public Color Color { get; set; }
         public Rectangle Form { get; set; }
         public SoundEffect Sound { get; set; }
-        public Vector2 Position
-        {
-            get
-            {
-                return this.position;
-            }
-            set
-            {
-                this.position = value;
-            }
-        }
+        public Vector2 Position { get; set; }
 
-        private Vector2 position;
-
+        public Rectangle BoundingBox { get; private set; }
         public BaseEntity()
         {
 
@@ -40,6 +23,7 @@ namespace MobyDick.Entities
             this.Color = color;
             this.Texture = texture;
             this.Form = form;
+            this.BoundingBox = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.Form.Width, this.Form.Height);
         }
 
         public BaseEntity(Texture2D texture, Rectangle form, Vector2 position, Color color, SoundEffect sound)
@@ -57,7 +41,7 @@ namespace MobyDick.Entities
 
         public virtual void Update()
         {
-
+            this.BoundingBox = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.Form.Width, this.Form.Height);
         }
 
         public void PlaySound(float volume = 0.5f)
