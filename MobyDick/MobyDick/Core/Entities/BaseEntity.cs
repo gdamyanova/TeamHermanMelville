@@ -3,21 +3,20 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Audio;
     using Microsoft.Xna.Framework.Graphics;
-    internal abstract class BaseEntity<TEntity>
+    internal abstract class BaseEntity<TEntity> : DrawableGameComponent
     {
-
+        #region Properties
         public Texture2D Texture { get; set; }
         public Color Color { get; set; }
         public Rectangle Form { get; set; }
         public SoundEffect Sound { get; set; }
         public Vector2 Position { get; set; }
-
         public Rectangle BoundingBox { get; private set; }
-        public BaseEntity()
-        {
+        private static Game GameContext;
+        #endregion
 
-        }
-        public BaseEntity(Texture2D texture, Rectangle form, Vector2 position, Color color)
+        #region Constructors
+        public BaseEntity(Texture2D texture, Rectangle form, Vector2 position, Color color) : base(GameContext)
         {
             this.Position = position;
             this.Color = color;
@@ -25,13 +24,14 @@
             this.Form = form;
             this.BoundingBox = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.Form.Width, this.Form.Height);
         }
-
         public BaseEntity(Texture2D texture, Rectangle form, Vector2 position, Color color, SoundEffect sound)
             : this(texture, form, position, color)
         {
             this.Sound = sound;
         }
+        #endregion
 
+        #region Methods
         public virtual void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
@@ -48,6 +48,13 @@
         {
             this.Sound.Play(volume, 0.5f, 0.5f);
         }
+        #endregion
 
+        #region Stupid static method, refactor!
+        public static void SetGameContext<TEntity>(Game game)
+        {
+            BaseEntity<IEntity>.GameContext = game;
+        }
+        #endregion
     }
 }

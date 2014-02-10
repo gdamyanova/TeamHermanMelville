@@ -11,7 +11,10 @@
         #region Events
         delegate bool EventHandler(bool item);
         event EventHandler Collision;
+        delegate void ItemEventHandler(object item);
+        event ItemEventHandler ItemPickUp;
         #endregion
+
         #region Properties
         private Dictionary<string, Scene> Scenes;
         private Scene CurrentScene { get; set; }
@@ -22,6 +25,7 @@
 
         private Dictionary<string, Texture2D> Textures;
         #endregion
+
         #region Constructors
         private World(ContentManager content, SpriteBatch spriteBatch)
         {
@@ -39,6 +43,7 @@
             return instance;
         }
         #endregion
+
         #region Methods
         public void AddScene(Scene scene)
         {
@@ -91,7 +96,7 @@
                 default:
                     break;
             }
-            foreach (var item in this.CurrentScene.Obsticles)
+            foreach (var item in this.CurrentScene.Obstacles)
             {
                 if (newEntityBoundingBox.Intersects(item.BoundingBox))
                 {
@@ -113,6 +118,17 @@
                     return true;
                 }
             }
+            foreach (var item in this.CurrentScene.Items)
+            {
+                if (newEntityBoundingBox.Intersects(item.BoundingBox))
+                {
+                    if (this.ItemPickUp != null)
+                    {
+                        this.ItemPickUp.Invoke(item);
+                    }
+                    return true;
+                }
+            }
             if (this.Collision != null)
             {
                 this.Collision.Invoke(true);
@@ -124,6 +140,7 @@
         {
             this.PlayerEntity = new Player(this.Textures[playerTexture], form, 100, 5, position, color, this.spriteBatch);
             this.Collision += this.PlayerEntity.HandleMoveCollision;
+            this.ItemPickUp += this.PlayerEntity.HandleItemPickup;
             this.PlayerEntity.MoveEvent += this.DetectCollisions;
         }
 

@@ -6,3 +6,4 @@ Content\dog_npc.xnb
 Content\good_guy_greg.xnb
 Content\whale_killer.xnb
 Content\zombie_link.xnb
+Content\stt.xnb

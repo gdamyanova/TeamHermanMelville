@@ -7,19 +7,27 @@
     using System.Collections.Generic;
     class Scene : BaseEntity<Scene>, IEntity
     {
+        #region Properties
         private Dictionary<string, Scene> LinkedScenes;
-        public List<BaseItem> Obsticles;
+        public List<BaseItem> Obstacles;
+        public List<BaseItem> Items;
         public List<NPC> NPCS;
         public string SceneName { get; private set; }
+        #endregion
+
+        #region Constructors
         public Scene(Texture2D texture, Rectangle form, Vector2 position, Color color, string sceneName)
             : base(texture, form, position, color)
         {
             this.SceneName = sceneName;
             this.NPCS = new List<NPC>();
-            this.Obsticles = new List<BaseItem>();
+            this.Obstacles = new List<BaseItem>();
             this.LinkedScenes = new Dictionary<string, Scene>();
+            this.Items = new List<BaseItem>();
         }
+        #endregion
 
+        #region Methods
         public void LinkScene(string sceneName, Scene scene)
         {
             this.LinkedScenes.Add(sceneName, scene);
@@ -39,7 +47,12 @@
 
         public void AddObsticle(BaseItem obsticle)
         {
-            this.Obsticles.Add(obsticle);
+            this.Obstacles.Add(obsticle);
+        }
+
+        public void AddItem(BaseItem item)
+        {
+            this.Items.Add(item);
         }
 
         public void AddNPC(NPC npc)
@@ -47,10 +60,10 @@
             this.NPCS.Add(npc);
         }
 
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             base.Update();
-            foreach (var obsticle in this.Obsticles)
+            foreach (var obsticle in this.Obstacles)
             {
                 obsticle.Update();
             }
@@ -58,11 +71,15 @@
             {
                 npc.Update();
             }
+            foreach (var item in this.Items)
+            {
+                item.Update();
+            }
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            foreach (var obsticle in this.Obsticles)
+            foreach (var obsticle in this.Obstacles)
             {
                 obsticle.Draw(spriteBatch);
             }
@@ -70,6 +87,12 @@
             {
                 npc.Draw();
             }
+            foreach (var item in this.Items)
+            {
+                item.Draw(spriteBatch);
+            }
+
         }
+        #endregion
     }
 }

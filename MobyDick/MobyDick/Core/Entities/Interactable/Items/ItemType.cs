@@ -2,5 +2,9 @@
 {
     enum ItemType
     {
+        Weapon,
+        Shield,
+        Armour,
+        Obstacle,
     }
 }

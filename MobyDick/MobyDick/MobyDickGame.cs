@@ -5,6 +5,7 @@ namespace MobyDick
     using Microsoft.Xna.Framework.Input;
     using MobyDick.Entities;
     using MobyDick.Entities.Interactable.Characters;
+    using MobyDick.Entities.Interactable.Items;
     /// <summary>
     /// This is the main type for your game
     /// </summary>
@@ -29,6 +30,7 @@ namespace MobyDick
         /// </summary>
         protected override void Initialize()
         {
+            BaseEntity<IEntity>.SetGameContext<IEntity>(this);
             // TODO: Add your initialization logic here
             base.Initialize();
         }
@@ -48,22 +50,22 @@ namespace MobyDick
             Texture2D blueNpc = Content.Load<Texture2D>("blue_npc");
             Texture2D creepyJane = Content.Load<Texture2D>("creepy_jane");
             Texture2D sceneTexture = Content.Load<Texture2D>("Telepath2");
-
+            Texture2D stt = Content.Load<Texture2D>("stt");
             world = World.MakeWorld(Content, spriteBatch);
             world.AddTexture("batman", "batman_sprite");
             world.CreatePlayer("batman", new Rectangle(0, 0, 30, 33), new Vector2(0, 0), Color.White);
 
             scene = new Scene(sceneTexture, new Rectangle(0, 0, 714, 512), new Vector2(0, 0), Color.Wheat, "scene 1");
-
             var wk = new NPC(whaleKiller, new Rectangle(0, 0, 40, 50), 100, 5,
                 new Vector2(50, 50), Color.White, spriteBatch);
             var zl = new NPC(zombieLink, new Rectangle(0, 0, 30, 36), 100, 5,
                 new Vector2(60, 0), Color.White, spriteBatch);
             var dog = new NPC(dogNpc, new Rectangle(0, 0, 30, 36), 100, 5,
                 new Vector2(60, 0), Color.White, spriteBatch);
-
+            var sttt = new BaseItem(stt, new Rectangle(0, 0, stt.Width, stt.Height), new Vector2(100, 100), Color.White, ItemType.Weapon);
             scene.AddNPC(wk);
-            //scene.AddNPC(zl);
+            scene.AddItem(sttt);
+            scene.AddNPC(zl);
             //scene.AddNPC(dog);
             world.AddScene(scene);
             // TODO: use this.Content to load your game content here

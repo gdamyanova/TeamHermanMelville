@@ -14,6 +14,7 @@
         {
             return this.CanMove = MoveAllowed;
         }
+
         #region Properties
         public int Health { get; private set; }
         public int Velocity { get; private set; }

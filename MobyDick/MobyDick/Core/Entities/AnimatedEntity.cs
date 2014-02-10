@@ -5,6 +5,7 @@
     using MobyDick.Entities.Interactable;
     internal abstract class AnimatedEntity : BaseEntity<AnimatedEntity>, IAnimatedEntity
     {
+        #region Priperties
         public float Timer { get; set; }
         public float Interval { get; set; }
         public int CurrentFrameNumber { get; set; }
@@ -23,6 +24,9 @@
                     this.Form.Height);
             }
         }
+        #endregion
+
+        #region Constructors
         public AnimatedEntity(Texture2D texture, Rectangle form, Vector2 position, Color color, SpriteBatch spriteBatch)
             : base(texture, form, position, color)
         {
@@ -46,7 +50,9 @@
             this.Effect = SpriteEffects.None;
             this.SpriteRows = spriteRows;
         }
+        #endregion
 
+        #region Methods
         protected void AnimateMovement(GameTime gameTime)
         {
             this.Timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -74,5 +80,6 @@
         {
             base.Draw(spriteBatch);
         }
+        #endregion
     }
 }

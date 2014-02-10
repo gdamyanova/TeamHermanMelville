@@ -6,6 +6,7 @@
     {
         int Level { get; }
         int Experience { get; }
-        List<ItemType> BackPack { get; }
+        List<BaseItem> BackPack { get; }
+        void HandleItemPickup(object item);
     }
 }

@@ -12,3 +12,4 @@ C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick
 C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\good_guy_greg.xnb
 C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\whale_killer.xnb
 C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\zombie_link.xnb
+C:\Users\Ivaylo\Documents\Visual Studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\stt.xnb
