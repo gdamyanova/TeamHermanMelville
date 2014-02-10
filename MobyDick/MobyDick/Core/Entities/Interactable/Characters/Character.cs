@@ -8,26 +8,16 @@
     using System.Collections.Generic;
 
     internal abstract class Character : AnimatedEntity, ICharacter, IInteractable
-    {   
-        public void HandleCollision(object entity)
+    {
+        public event EventHandler MoveEvent;
+        public bool HandleMoveCollision(bool MoveAllowed)
         {
-            if (entity is Character)
-            {
-                this.HandleCharacterInteraction(entity as Character);
-            }
-            else if (entity is BaseItem)
-            {
-
-            }
-            else if (entity == null)
-            {
-
-            }
+            return this.CanMove = MoveAllowed;
         }
         #region Properties
         public int Health { get; private set; }
         public int Velocity { get; private set; }
-        private Vector2 PreviousPosition { get; set; }
+        private bool CanMove;
         #endregion
 
         #region Constructors
@@ -38,30 +28,10 @@
             this.Velocity = velocity;
         }
         #endregion
+
         #region Methods
-        private void HandleCharacterInteraction(Character entity)
-        {
-            switch (this.currentDirection)
-            {
-                case Directions.Down:
-                this.Position = new Vector2(this.Position.X, entity.Position.Y - this.Form.Height);
-                    break;
-                case Directions.Left:
-                    this.Position = new Vector2(entity.Position.X + this.Form.Width, this.Position.Y);
-                    break;
-                case Directions.Right:
-                    this.Position = new Vector2(entity.Position.X - this.Form.Width, this.Position.Y);
-                    break;
-                case Directions.Up:
-                this.Position = new Vector2(this.Position.X, entity.Position.Y + this.Form.Height);
-                    break;
-                default:
-                    break;
-            }
-        }
         public void Update(GameTime gameTime)
         {
-            this.PreviousPosition = this.Position;
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
                 this.AnimateMovement(gameTime);
@@ -86,26 +56,30 @@
 
         private void Move(Directions direction)
         {
-            switch (direction)
+            if (this.MoveEvent != null)
             {
-                case Directions.Up:
-                    this.currentDirection = Directions.Up;
-                    this.Position -= new Vector2(0, this.Velocity);
-                    break;
-                case Directions.Down:
-                    this.currentDirection = Directions.Down;
-                    this.Position += new Vector2(0, this.Velocity);
-                    break;
-                case Directions.Left:
-                    this.currentDirection = Directions.Left;
-                    this.Position -= new Vector2(this.Velocity, 0);
-                    break;
-                case Directions.Right:
-                    this.currentDirection = Directions.Right;
-                    this.Position += new Vector2(this.Velocity, 0);
-                    break;
-                default:
-                    break;
+                this.MoveEvent.Invoke(this);
+            }
+            this.currentDirection = direction;
+            if (this.CanMove)
+            {
+                switch (direction)
+                {
+                    case Directions.Up:
+                        this.Position -= new Vector2(0, this.Velocity);
+                        break;
+                    case Directions.Down:
+                        this.Position += new Vector2(0, this.Velocity);
+                        break;
+                    case Directions.Left:
+                        this.Position -= new Vector2(this.Velocity, 0);
+                        break;
+                    case Directions.Right:
+                        this.Position += new Vector2(this.Velocity, 0);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
         public override void Draw()

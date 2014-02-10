@@ -9,7 +9,7 @@
     class World
     {
         #region Events
-        delegate void EventHandler(object item);
+        delegate bool EventHandler(bool item);
         event EventHandler Collision;
         #endregion
         #region Properties
@@ -70,33 +70,52 @@
             }
         }
 
-        private bool DetectCollisions()
+        private bool DetectCollisions(object sender)
         {
+            var entity = sender as Character;
+            Rectangle newEntityBoundingBox = new Rectangle();
+            switch (entity.currentDirection)
+            {
+                case MobyDick.Entities.Interactable.Directions.Down:
+                    newEntityBoundingBox = new Rectangle((int)entity.Position.X, (int)entity.Position.Y + entity.Velocity, entity.Form.Width, entity.Form.Height);
+                    break;
+                case MobyDick.Entities.Interactable.Directions.Left:
+                    newEntityBoundingBox = new Rectangle((int)entity.Position.X - entity.Velocity, (int)entity.Position.Y, entity.Form.Width, entity.Form.Height);
+                    break;
+                case MobyDick.Entities.Interactable.Directions.Right:
+                    newEntityBoundingBox = new Rectangle((int)entity.Position.X + entity.Velocity, (int)entity.Position.Y, entity.Form.Width, entity.Form.Height);
+                    break;
+                case MobyDick.Entities.Interactable.Directions.Up:
+                    newEntityBoundingBox = new Rectangle((int)entity.Position.X, (int)entity.Position.Y - entity.Velocity, entity.Form.Width, entity.Form.Height);
+                    break;
+                default:
+                    break;
+            }
             foreach (var item in this.CurrentScene.Obsticles)
             {
-                if (this.PlayerEntity.BoundingBox.Intersects(item.BoundingBox))
+                if (newEntityBoundingBox.Intersects(item.BoundingBox))
                 {
                     if (this.Collision != null)
                     {
-                        this.Collision.Invoke(item);
+                        this.Collision.Invoke(false);
                     }
                     return true;
                 }
             }
             foreach (var item in this.CurrentScene.NPCS)
             {
-                if (this.PlayerEntity.BoundingBox.Intersects(item.BoundingBox))
+                if (newEntityBoundingBox.Intersects(item.BoundingBox))
                 {
                     if (this.Collision != null)
                     {
-                        this.Collision.Invoke(item);
+                        this.Collision.Invoke(false);
                     }
                     return true;
                 }
             }
             if (this.Collision != null)
             {
-                this.Collision.Invoke(null);
+                this.Collision.Invoke(true);
             }
             return true;
         }
@@ -104,7 +123,8 @@
         public void CreatePlayer(string playerTexture, Rectangle form, Vector2 position, Color color)
         {
             this.PlayerEntity = new Player(this.Textures[playerTexture], form, 100, 5, position, color, this.spriteBatch);
-            this.Collision += this.PlayerEntity.HandleCollision;
+            this.Collision += this.PlayerEntity.HandleMoveCollision;
+            this.PlayerEntity.MoveEvent += this.DetectCollisions;
         }
 
         public void AddTexture(string textureName, string assetName)
@@ -120,12 +140,8 @@
 
         public void Update(GameTime gameTime)
         {
-            if (this.DetectCollisions())
-            {
-                this.CurrentScene.Update(gameTime);
-                this.PlayerEntity.Update(gameTime);
-            }
-
+            this.CurrentScene.Update(gameTime);
+            this.PlayerEntity.Update(gameTime);
         }
         #endregion
     }
