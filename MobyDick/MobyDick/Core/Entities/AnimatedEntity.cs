@@ -72,9 +72,12 @@
         }
         public virtual void Draw()
         {
-            this.spriteBatch.Begin();
-            this.spriteBatch.Draw(this.Texture, this.Position, this.CurrentFrame, this.Color, 0, new Vector2(0, 0), 1, this.Effect, 0);
-            this.spriteBatch.End();
+            if (this.Enabled)
+            {
+                this.spriteBatch.Begin();
+                this.spriteBatch.Draw(this.Texture, this.Position, this.CurrentFrame, this.Color, 0, new Vector2(0, 0), 1, this.Effect, 0);
+                this.spriteBatch.End();
+            }
         }
         public override void Draw(SpriteBatch spriteBatch)
         {

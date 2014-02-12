@@ -55,6 +55,11 @@
             this.Items.Add(item);
         }
 
+        public void RemoteItemFromScene(BaseItem item)
+        {
+            this.Items.Remove(item);
+        }
+
         public void AddNPC(NPC npc)
         {
             this.NPCS.Add(npc);

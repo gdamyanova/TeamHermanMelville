@@ -34,9 +34,12 @@
         #region Methods
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
-            spriteBatch.Draw(this.Texture, this.Position, this.Form, this.Color);
-            spriteBatch.End();
+            if (this.Enabled)
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(this.Texture, this.Position, this.Form, this.Color);
+                spriteBatch.End();
+            }
         }
 
         public virtual void Update()
@@ -48,10 +51,15 @@
         {
             this.Sound.Play(volume, 0.5f, 0.5f);
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
         #endregion
 
         #region Stupid static method, refactor!
-        public static void SetGameContext<TEntity>(Game game)
+        public static void SetGameContext(Game game)
         {
             BaseEntity<IEntity>.GameContext = game;
         }

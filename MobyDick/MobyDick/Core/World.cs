@@ -26,6 +26,9 @@
         private Dictionary<string, Texture2D> Textures;
         #endregion
 
+        #region Fields
+        private static readonly object _locker = new object();
+        #endregion
         #region Constructors
         private World(ContentManager content, SpriteBatch spriteBatch)
         {
@@ -38,7 +41,13 @@
         {
             if (instance == null)
             {
-                instance = new World(content, spriteBatch);
+                lock (_locker)
+                {
+                    if (instance == null)
+                    {
+                        instance = new World(content, spriteBatch);
+                    }
+                }
             }
             return instance;
         }
@@ -126,6 +135,8 @@
                     {
                         this.ItemPickUp.Invoke(item);
                     }
+                    item.Enabled = false;
+                    this.CurrentScene.RemoteItemFromScene(item);
                     return true;
                 }
             }

@@ -79,7 +79,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ivaylo\Documents\Visual Studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\stt.xnb</Output>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\stt.xnb</Output>
       <Time>2014-02-10T11:29:32.256764+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -89,10 +89,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Ivaylo\Documents\Visual Studio 2013\Projects\MobyDick\MobyDick\MobyDickContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Ivaylo\Documents\Visual Studio 2013\Projects\MobyDick\MobyDick\MobyDick\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Ivaylo\Documents\Visual Studio 2013\Projects\MobyDick\MobyDick\MobyDick\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Ivaylo\Documents\Visual Studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDickContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

@@ -13,7 +13,6 @@ namespace MobyDick
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Player character;
         Scene scene;
         World world;
         public MobyDickGame()
@@ -30,7 +29,7 @@ namespace MobyDick
         /// </summary>
         protected override void Initialize()
         {
-            BaseEntity<IEntity>.SetGameContext<IEntity>(this);
+            BaseEntity<IEntity>.SetGameContext(this);
             // TODO: Add your initialization logic here
             base.Initialize();
         }
