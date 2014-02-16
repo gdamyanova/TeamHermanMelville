@@ -1,4 +1,4 @@
-﻿namespace MobyDick.Entities.Interactable.Items
+﻿namespace MobyDick.Core.Entities.Interactable.Items
 {
     interface IItem : IEntity
     {

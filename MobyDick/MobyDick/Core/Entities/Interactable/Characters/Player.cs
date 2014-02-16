@@ -1,8 +1,8 @@
-﻿namespace MobyDick.Entities.Interactable.Characters
+﻿namespace MobyDick.Core.Entities.Interactable.Characters
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
-    using MobyDick.Entities.Interactable.Items;
+    using MobyDick.Core.Entities.Interactable.Items;
     using System.Collections.Generic;
     internal class Player : Character, IPlayer
     {

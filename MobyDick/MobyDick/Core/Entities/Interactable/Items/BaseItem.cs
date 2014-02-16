@@ -1,8 +1,9 @@
-﻿namespace MobyDick.Entities.Interactable.Items
+﻿namespace MobyDick.Core.Entities.Interactable.Items
 {
     using System;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
+    using MobyDick.Core.Entities;
     internal class BaseItem: BaseEntity<BaseItem>, IItem
     {
         public ItemType Type { get; set; }

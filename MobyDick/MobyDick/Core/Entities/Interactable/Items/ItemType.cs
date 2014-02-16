@@ -1,10 +1,10 @@
-﻿namespace MobyDick.Entities.Interactable.Items
+﻿namespace MobyDick.Core.Entities.Interactable.Items
 {
     enum ItemType
     {
         Weapon,
         Shield,
-        Armour,
+        Armor,
         Obstacle,
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace MobyDick.Entities.Interactable.Characters
+﻿namespace MobyDick.Core.Entities.Interactable.Characters
 {
-    using MobyDick.Entities.Interactable.Items;
+    using MobyDick.Core.Entities.Interactable.Items;
     using System.Collections.Generic;
     interface IPlayer
     {

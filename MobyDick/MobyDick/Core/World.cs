@@ -3,8 +3,10 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
-    using MobyDick.Entities;
-    using MobyDick.Entities.Interactable.Characters;
+    using MobyDick.Core;
+    using MobyDick.Core.Entities;
+    using MobyDick.Core.Entities.Interactable.Characters;
+    using MobyDick.Core.Screen;
     using System.Collections.Generic;
     class World
     {
@@ -22,13 +24,13 @@
         private ContentManager Content { get; set; }
         private SpriteBatch spriteBatch { get; set; }
         private static World instance;
-
         private Dictionary<string, Texture2D> Textures;
         #endregion
 
         #region Fields
         private static readonly object _locker = new object();
         #endregion
+
         #region Constructors
         private World(ContentManager content, SpriteBatch spriteBatch)
         {
@@ -90,16 +92,16 @@
             Rectangle newEntityBoundingBox = new Rectangle();
             switch (entity.currentDirection)
             {
-                case MobyDick.Entities.Interactable.Directions.Down:
+                case MobyDick.Core.Entities.Interactable.Directions.Down:
                     newEntityBoundingBox = new Rectangle((int)entity.Position.X, (int)entity.Position.Y + entity.Velocity, entity.Form.Width, entity.Form.Height);
                     break;
-                case MobyDick.Entities.Interactable.Directions.Left:
+                case MobyDick.Core.Entities.Interactable.Directions.Left:
                     newEntityBoundingBox = new Rectangle((int)entity.Position.X - entity.Velocity, (int)entity.Position.Y, entity.Form.Width, entity.Form.Height);
                     break;
-                case MobyDick.Entities.Interactable.Directions.Right:
+                case MobyDick.Core.Entities.Interactable.Directions.Right:
                     newEntityBoundingBox = new Rectangle((int)entity.Position.X + entity.Velocity, (int)entity.Position.Y, entity.Form.Width, entity.Form.Height);
                     break;
-                case MobyDick.Entities.Interactable.Directions.Up:
+                case MobyDick.Core.Entities.Interactable.Directions.Up:
                     newEntityBoundingBox = new Rectangle((int)entity.Position.X, (int)entity.Position.Y - entity.Velocity, entity.Form.Width, entity.Form.Height);
                     break;
                 default:
@@ -136,7 +138,7 @@
                         this.ItemPickUp.Invoke(item);
                     }
                     item.Enabled = false;
-                    this.CurrentScene.RemoteItemFromScene(item);
+                    this.CurrentScene.RemoveItemFromScene(item);
                     return true;
                 }
             }
@@ -150,7 +152,7 @@
         public void CreatePlayer(string playerTexture, Rectangle form, Vector2 position, Color color)
         {
             this.PlayerEntity = new Player(this.Textures[playerTexture], form, 100, 5, position, color, this.spriteBatch);
-            this.Collision += this.PlayerEntity.HandleMoveCollision;
+            this.Collision += this.PlayerEntity.HandleCollision;
             this.ItemPickUp += this.PlayerEntity.HandleItemPickup;
             this.PlayerEntity.MoveEvent += this.DetectCollisions;
         }

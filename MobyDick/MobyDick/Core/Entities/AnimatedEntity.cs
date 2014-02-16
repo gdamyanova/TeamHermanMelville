@@ -1,8 +1,9 @@
-﻿namespace MobyDick.Entities
+﻿namespace MobyDick.Core.Entities
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
-    using MobyDick.Entities.Interactable;
+    using MobyDick.Core.Entities;
+    using MobyDick.Core.Entities.Interactable;
     internal abstract class AnimatedEntity : BaseEntity<AnimatedEntity>, IAnimatedEntity
     {
         #region Priperties

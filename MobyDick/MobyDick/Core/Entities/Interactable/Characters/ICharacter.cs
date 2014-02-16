@@ -1,4 +1,4 @@
-﻿namespace MobyDick.Entities.Interactable.Characters
+﻿namespace MobyDick.Core.Entities.Interactable.Characters
 {
     interface ICharacter : IAnimatedEntity
     {

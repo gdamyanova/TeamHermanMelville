@@ -1,16 +1,16 @@
-﻿namespace MobyDick.Entities.Interactable.Characters
+﻿namespace MobyDick.Core.Entities.Interactable.Characters
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
     using MobyDick.Core.Entities.Interactable;
-    using MobyDick.Entities.Interactable.Items;
+    using MobyDick.Core.Entities.Interactable.Items;
     using System.Collections.Generic;
 
-    internal abstract class Character : AnimatedEntity, ICharacter, IInteractable
+    internal abstract class Character : AnimatedEntity, ICharacter
     {
-        public event EventHandler MoveEvent;
-        public bool HandleMoveCollision(bool MoveAllowed)
+        public override event EventHandler MoveEvent;
+        public override bool HandleCollision(bool MoveAllowed)
         {
             return this.CanMove = MoveAllowed;
         }
@@ -31,7 +31,7 @@
         #endregion
 
         #region Methods
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {

@@ -1,9 +1,9 @@
-﻿namespace MobyDick.Core.Entities.Interactable
+﻿namespace MobyDick.Core.Entities
 {
     public delegate bool EventHandler (object sender);
     interface IInteractable
     {
-        bool HandleMoveCollision(bool MoveAllowed);
+        bool HandleCollision(bool MoveAllowed);
         event EventHandler MoveEvent;
     }
 }

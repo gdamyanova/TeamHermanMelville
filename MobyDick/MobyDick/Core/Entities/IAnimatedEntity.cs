@@ -1,4 +1,4 @@
-﻿namespace MobyDick.Entities
+﻿namespace MobyDick.Core.Entities
 {
     using Microsoft.Xna.Framework.Graphics;
     interface IAnimatedEntity : IEntity

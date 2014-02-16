@@ -1,4 +1,4 @@
-﻿namespace MobyDick.Entities.Interactable
+﻿namespace MobyDick.Core.Entities.Interactable
 {
     enum Directions
     {

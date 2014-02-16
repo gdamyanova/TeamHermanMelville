@@ -3,9 +3,10 @@ namespace MobyDick
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
-    using MobyDick.Entities;
-    using MobyDick.Entities.Interactable.Characters;
-    using MobyDick.Entities.Interactable.Items;
+    using MobyDick.Core.Entities;
+    using MobyDick.Core.Entities.Interactable.Characters;
+    using MobyDick.Core.Entities.Interactable.Items;
+    using MobyDick.Core.Screen;
     /// <summary>
     /// This is the main type for your game
     /// </summary>

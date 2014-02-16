@@ -1,10 +1,17 @@
-﻿namespace MobyDick.Entities
+﻿namespace MobyDick.Core.Entities
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Audio;
     using Microsoft.Xna.Framework.Graphics;
-    internal abstract class BaseEntity<TEntity> : DrawableGameComponent
+    using MobyDick.Core;
+    using MobyDick.Core.Entities;
+    internal abstract class BaseEntity<TEntity> : DrawableGameComponent, IEntity
     {
+        public virtual event EventHandler MoveEvent;
+        public virtual bool HandleCollision(bool CanMove)
+        {
+            return true;
+        }
         #region Properties
         public Texture2D Texture { get; set; }
         public Color Color { get; set; }
@@ -44,7 +51,10 @@
 
         public virtual void Update()
         {
-            this.BoundingBox = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.Form.Width, this.Form.Height);
+            if (this.Enabled)
+            {
+                this.BoundingBox = new Rectangle((int)this.Position.X, (int)this.Position.Y, this.Form.Width, this.Form.Height);
+            }
         }
 
         public void PlaySound(float volume = 0.5f)
