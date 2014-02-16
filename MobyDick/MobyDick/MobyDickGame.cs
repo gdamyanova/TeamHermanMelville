@@ -7,6 +7,7 @@ namespace MobyDick
     using MobyDick.Core.Entities.Interactable.Characters;
     using MobyDick.Core.Entities.Interactable.Items;
     using MobyDick.Core.Screen;
+    using System;
     /// <summary>
     /// This is the main type for your game
     /// </summary>

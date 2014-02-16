@@ -1,13 +1,15 @@
 ﻿namespace MobyDick
 {
     using Microsoft.Xna.Framework;
-    using Microsoft.Xna.Framework.Content;
-    using Microsoft.Xna.Framework.Graphics;
-    using MobyDick.Core;
-    using MobyDick.Core.Entities;
-    using MobyDick.Core.Entities.Interactable.Characters;
-    using MobyDick.Core.Screen;
-    using System.Collections.Generic;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using MobyDick.Core;
+using MobyDick.Core.Entities;
+using MobyDick.Core.Entities.Interactable.Characters;
+using MobyDick.Core.Entities.Interactable.Items;
+using MobyDick.Core.Screen;
+using System.Collections.Generic;
+
     class World
     {
         #region Events

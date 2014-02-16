@@ -15,6 +15,12 @@
             return this.CanMove = MoveAllowed;
         }
 
+        public void UseItem(object item)
+        {
+            var entity = item as BaseItem;
+            entity.Use(this);
+        }
+
         #region Properties
         public int Health { get; private set; }
         public int Velocity { get; private set; }
