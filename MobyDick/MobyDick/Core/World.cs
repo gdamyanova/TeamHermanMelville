@@ -21,10 +21,10 @@ using System.Collections.Generic;
 
         #region Properties
         private Dictionary<string, Scene> Scenes;
-        private Scene CurrentScene { get; set; }
+        public Scene CurrentScene { get; set; }
         private Player PlayerEntity;
-        private ContentManager Content { get; set; }
-        private SpriteBatch spriteBatch { get; set; }
+        public ContentManager Content { get; set; }
+        public SpriteBatch spriteBatch { get; set; }
         private static World instance;
         private Dictionary<string, Texture2D> Textures;
         #endregion
@@ -54,6 +54,14 @@ using System.Collections.Generic;
                 }
             }
             return instance;
+        }
+        public static World MakeWorld()
+        {
+            if (instance != null)
+            {
+                return instance;
+            }
+                return null;
         }
         #endregion
 

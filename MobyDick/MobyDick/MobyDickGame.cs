@@ -57,16 +57,19 @@ namespace MobyDick
             world.CreatePlayer("batman", new Rectangle(0, 0, 30, 33), new Vector2(0, 0), Color.White);
 
             scene = new Scene(sceneTexture, new Rectangle(0, 0, 714, 512), new Vector2(0, 0), Color.Wheat, "scene 1");
-            var wk = new NPC(whaleKiller, new Rectangle(0, 0, 40, 50), 100, 5,
+            var wk = new Enemy(whaleKiller, new Rectangle(0, 0, 40, 50), 100, 2,
                 new Vector2(50, 50), Color.White, spriteBatch);
-            var zl = new NPC(zombieLink, new Rectangle(0, 0, 30, 36), 100, 5,
+            var zl = new Enemy(zombieLink, new Rectangle(0, 0, 30, 36), 100, 1,
                 new Vector2(60, 0), Color.White, spriteBatch);
             var dog = new NPC(dogNpc, new Rectangle(0, 0, 30, 36), 100, 5,
                 new Vector2(60, 0), Color.White, spriteBatch);
-            var sttt = new BaseItem(stt, new Rectangle(0, 0, stt.Width, stt.Height), new Vector2(100, 100), Color.White, ItemType.Weapon);
+            var sttt = new BaseItem(stt, new Rectangle(0, 0, stt.Width, stt.Height), new Vector2(150, 150), Color.White, ItemType.Weapon);
+            Texture2D proj = Content.Load<Texture2D>("list-style-type-active");
+            var projectile = new BaseItem(proj, new Rectangle(0, 0, 16, 16), new Vector2(200, 200), Color.White, ItemType.Weapon);
             scene.AddNPC(wk);
             scene.AddItem(sttt);
             scene.AddNPC(zl);
+            scene.AddItem(projectile);
             //scene.AddNPC(dog);
             world.AddScene(scene);
             // TODO: use this.Content to load your game content here

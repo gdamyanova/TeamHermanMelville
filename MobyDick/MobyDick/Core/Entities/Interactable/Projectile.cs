@@ -1,22 +1,24 @@
-﻿namespace MobyDick.Core.Entities.Interactable.Characters
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+namespace MobyDick.Core.Entities.Interactable
 {
-    using Microsoft.Xna.Framework;
-    using Microsoft.Xna.Framework.Graphics;
-
-    internal class Enemy : NPC
+    class Projectile : AnimatedEntity
     {
-        public override event EventHandler MoveEvent;
-        public Enemy(Texture2D texture, Rectangle form, int health, int velocity, Vector2 position, Color color, SpriteBatch spriteBatch)
-            : base(texture, form, health, velocity, position, color, spriteBatch)
+        private int Velocity;
+        public Projectile(Texture2D projectile, Rectangle form, Vector2 position, Color color, SpriteBatch spriteBatch, Directions direction)
+            : base(projectile, form, position, color, spriteBatch)
         {
-
+            this.currentDirection = direction;
+            this.Velocity = 5;
         }
 
         public override void Update()
         {
             this.Move(this.currentDirection);
+            base.Update();
         }
-        protected override void Move(Directions direction)
+
+        private void Move(Directions direction)
         {
             switch (direction)
             {

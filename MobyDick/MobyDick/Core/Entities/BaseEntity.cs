@@ -19,6 +19,7 @@
         public SoundEffect Sound { get; set; }
         public Vector2 Position { get; set; }
         public Rectangle BoundingBox { get; private set; }
+        public Rectangle EventHorizon { get; private set; }
         private static Game GameContext;
         #endregion
 

@@ -13,6 +13,7 @@
         public List<BaseItem> Obstacles;
         public List<BaseItem> Items;
         public List<NPC> NPCS;
+        public List<AnimatedEntity> AnimatedEntities;
         public string SceneName { get; private set; }
         #endregion
                                                                                       
@@ -25,6 +26,7 @@
             this.Obstacles = new List<BaseItem>();
             this.LinkedScenes = new Dictionary<string, Scene>();
             this.Items = new List<BaseItem>();
+            this.AnimatedEntities = new List<AnimatedEntity>();
         }
         #endregion
 
@@ -81,6 +83,10 @@
             {
                 item.Update();
             }
+            foreach (var item in this.AnimatedEntities)
+            {
+                item.Update();
+            }
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
@@ -97,7 +103,15 @@
             {
                 item.Draw(spriteBatch);
             }
+            foreach (var item in this.AnimatedEntities)
+            {
+                item.Draw();
+            }
+        }
 
+        public void AddMovingEntity(AnimatedEntity entity)
+        {
+            this.AnimatedEntities.Add(entity);
         }
         #endregion
     }

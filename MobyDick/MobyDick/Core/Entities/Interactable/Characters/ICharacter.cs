@@ -4,6 +4,6 @@
     {
         int Health { get; }
         int Velocity { get;}
-
+        void Attack();
     }
 }

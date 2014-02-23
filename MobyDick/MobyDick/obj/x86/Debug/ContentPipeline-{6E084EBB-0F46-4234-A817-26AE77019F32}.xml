@@ -82,6 +82,24 @@
       <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\stt.xnb</Output>
       <Time>2014-02-10T11:29:32.256764+02:00</Time>
     </Item>
+    <Item>
+      <Source>projectile.png</Source>
+      <Name>projectile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\projectile.xnb</Output>
+      <Time>2014-02-23T20:04:22.2686732+02:00</Time>
+    </Item>
+    <Item>
+      <Source>list-style-type-active.png</Source>
+      <Name>list-style-type-active</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ivaylo\documents\visual studio 2013\Projects\MobyDick\MobyDick\MobyDick\bin\x86\Debug\Content\list-style-type-active.xnb</Output>
+      <Time>2014-02-23T20:08:04.847038+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{6E084EBB-0F46-4234-A817-26AE77019F32}</ContentProjectGUID>

@@ -24,7 +24,8 @@
         #region Properties
         public int Health { get; private set; }
         public int Velocity { get; private set; }
-        private bool CanMove;
+        protected bool CanMove;
+        public ProjectileType CurrentWeapon { get; set; }
         #endregion
 
         #region Constructors
@@ -59,9 +60,13 @@
                 this.AnimateMovement(gameTime);
                 this.Move(Directions.Down);
             }
+            else if (Keyboard.GetState().IsKeyDown(Keys.Space))
+            {
+                this.Attack();
+            }
         }
 
-        private void Move(Directions direction)
+        protected virtual void Move(Directions direction)
         {
             if (this.MoveEvent != null)
             {
@@ -97,6 +102,63 @@
         {
             base.Draw(spriteBatch);
         }
+
+        public void Attack()
+        {
+            World world = World.MakeWorld();
+            Texture2D projectile;
+            switch (this.CurrentWeapon)
+            {
+                case ProjectileType.StringBuilder:
+                    projectile = world.Content.Load<Texture2D>("list-style-type-active");
+                    break;
+                case ProjectileType.RegularExpression:
+                    //break;
+                case ProjectileType.LINQ:
+                    //break;
+                case ProjectileType.Lambda:
+                    //break;
+                case ProjectileType.Event:
+                    //break;
+                case ProjectileType.VirtualMethod:
+                    //break;
+                case ProjectileType.AbstractClass:
+                    //break;
+                case ProjectileType.Interface:
+                    //break;
+                case ProjectileType.IEnumerable:
+                    //break;
+                case ProjectileType.Inheritance:
+                    //break;
+                case ProjectileType.Polymorphism:
+                    //break;
+                default:
+                    projectile = world.Content.Load<Texture2D>("list-style-type-active");
+                    break;
+            }
+            Vector2 position;
+            switch (this.currentDirection)
+            {
+                case Directions.Down:
+                    position = new Vector2(this.Position.X, this.Position.Y + 16);
+                    break;
+                case Directions.Left:
+                    position = new Vector2(this.Position.X - 16, this.Position.Y);
+                    break;
+                case Directions.Right:
+                    position = new Vector2(this.Position.X + 16, this.Position.Y);
+                    break;
+                case Directions.Up:
+                    position = new Vector2(this.Position.X, this.Position.Y - 16);
+                    break;
+                default:
+                    position = new Vector2(this.Position.X, this.Position.Y - 16);
+                    break;
+            }
+            var proj = new Projectile(projectile, new Rectangle(0, 0, 16, 16), position, Color.Wheat, world.spriteBatch, this.currentDirection);
+            world.CurrentScene.AddMovingEntity(proj);
+        }
         #endregion
+
     }
 }

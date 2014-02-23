@@ -6,5 +6,6 @@
         Shield,
         Armor,
         Obstacle,
+        Health
     }
 }
