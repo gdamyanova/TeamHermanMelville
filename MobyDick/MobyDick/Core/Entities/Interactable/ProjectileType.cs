@@ -5,7 +5,19 @@ using System.Text;
 
 namespace MobyDick.Core.Entities.Interactable
 {
-    class ProjectileType
+    enum ProjectileType
     {
+        StringBuilder,
+        RegularExpression,
+        LINQ,
+        Lambda,
+        Event,
+        VirtualMethod,
+        AbstractClass,
+        Interface,
+        IEnumerable,
+        Inheritance,
+        Polymorphism,
+        
     }
 }
